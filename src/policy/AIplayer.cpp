@@ -27,7 +27,7 @@ Move AIplayer::get_move(State *state, int depth) {
     for(auto move : actions) {
         State* child_state = state->next_state(move);
         int value = minimax(child_state, depth, false, alpha, beta); // False because we're considering opponent's best move
-        delete child_state; // Delete child_state after using it
+        //delete child_state; // Delete child_state after using it
 
         if(value > bestValue) {
             bestValue = value;
