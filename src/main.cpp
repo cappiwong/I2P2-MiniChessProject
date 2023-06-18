@@ -63,7 +63,7 @@ class State{
     void get_legal_actions();
     std::string encode_output();
     std::string encode_state();
-}; 
+};
 
 /**
  * @brief return next state after the move
@@ -255,7 +255,7 @@ void State::get_legal_actions(){
       }
     }
   }
-  std::cout << "\n";
+  //std::cout << "\n";
   this->legal_actions = all_actions;
 }
 
@@ -393,7 +393,7 @@ bool valid_move(Move move, std::vector<Move>& legal_moves){
   }
   return false;
 }
-1
+
 
 static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100};
 

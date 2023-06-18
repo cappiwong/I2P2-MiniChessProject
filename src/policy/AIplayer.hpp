@@ -9,5 +9,5 @@
 class AIplayer{
 public:
   static Move get_move(State *state, int depth);
-  int minimax(State *state, int depth, bool maximizingPlayer,int alpha, int beta);
+  static int minimax(State* state, int depth, bool findmax, int alpha_prunning, int beta_prunning);
 };

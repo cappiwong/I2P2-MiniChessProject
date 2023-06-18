@@ -10,7 +10,7 @@ State* root;
 
 /**
  * @brief Read the board from the file
- * 
+ * w
  * @param fin 
  */
 void read_board(std::ifstream& fin) {
@@ -42,7 +42,7 @@ void write_valid_spot(std::ofstream& fout) {
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    auto move = AIpolicy::get_move(root, 0);
+    auto move = AIplayer::get_move(root, 6);
     fout << move.first.first << " " << move.first.second << " "\
          << move.second.first << " " << move.second.second << std::endl;
     

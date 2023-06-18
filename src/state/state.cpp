@@ -11,24 +11,29 @@
  * 
  * @return int 
  */
-int State::evaluate(){
-  int white_material = 0;
-  int black_material = 0;
-  // [TODO] design your own evaluation function
-  static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100};
+int State::evaluate() {
+    int piece;
+    int white_material = 0;
+    int black_material = 0;
 
-  for(size_t i=0; i<BOARD_H; i+=1){
-    for(size_t j=0; j<BOARD_W; j+=1){
-      if((piece=game.board.board[0][i][j])){
-        white_material += material_table[piece];
-      }
-      if((piece=game.board.board[1][i][j])){
-        black_material += material_table[piece];
-      }
+    // Piece values based on the piece type
+    static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100};
+
+    for (size_t i = 0; i < BOARD_H; i++) {
+        for (size_t j = 0; j < BOARD_W; j++) {
+            if ((piece = this->board.board[0][i][j])) {
+                white_material += material_table[piece];
+            }
+            if ((piece = this->board.board[1][i][j])) {
+                black_material += material_table[piece];
+            }
+        }
     }
-  }
-  return white_material - black_material;
+    // Adjust the evaluation based on the player to move
+    return white_material-black_material;
 }
+
+
 
 
 /**
@@ -221,7 +226,7 @@ void State::get_legal_actions(){
       }
     }
   }
-  std::cout << "\n";
+  //std::cout << "\n";
   this->legal_actions = all_actions;
 }
 
